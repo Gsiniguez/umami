@@ -21,7 +21,7 @@ const contentSecurityPolicy = [
   `script-src 'self' 'unsafe-eval' 'unsafe-inline'`,
   `style-src 'self' 'unsafe-inline'`,
   `connect-src 'self' api.umami.is cloud.umami.is`,
-  `frame-ancestors 'self' ${frameAncestors}`,
+  `frame-ancestors 'self' ${frameAncestors ?? '* localhost'}`,
 ];
 
 const headers = [
