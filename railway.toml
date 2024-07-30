@@ -2,10 +2,10 @@
 builder = "nixpacks"
 # nixpacksConfigPath = "nixpacks.toml"
 watchPatterns = ["src/**"]
-buildCommand = "npm run build"
+buildCommand = "yarn run build"
 
 [deploy]
-startCommand = "npm run start"
+startCommand = "yarn run start"
 # healthcheckPath = "/healthcheck"
 # healthcheckTimeout = 100
 # restartPolicyType = "NEVER"
