@@ -1,0 +1,16 @@
+[build]
+builder = "nixpacks"
+# nixpacksConfigPath = "nixpacks.toml"
+watchPatterns = ["src/**"]
+buildCommand = "npm run build"
+
+[deploy]
+startCommand = "npm run start"
+# healthcheckPath = "/healthcheck"
+# healthcheckTimeout = 100
+# restartPolicyType = "NEVER"
+
+[environments.production.deploy]
+numReplicas = 1
+restartPolicyType = "ALWAYS"
+# restartPolicyMaxRetries = 3
