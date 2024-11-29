@@ -1,20 +1,18 @@
 'use client';
-import { usePathname } from 'next/navigation';
-import FilterTags from 'components/metrics/FilterTags';
 import { useNavigation } from 'components/hooks';
+import FilterTags from 'components/metrics/FilterTags';
+import { FILTER_COLUMNS } from 'lib/constants';
 import WebsiteChart from './WebsiteChart';
 import WebsiteExpandedView from './WebsiteExpandedView';
-import WebsiteHeader from './WebsiteHeader';
 import WebsiteMetricsBar from './WebsiteMetricsBar';
-import WebsiteTableView from './WebsiteTableView';
 import WebsiteProvider from './WebsiteProvider';
-import { FILTER_COLUMNS } from 'lib/constants';
+import WebsiteTableView from './WebsiteTableView';
 
 export default function WebsiteDetailsPage({ websiteId }: { websiteId: string }) {
-  const pathname = usePathname();
+  // const pathname = usePathname();
   const { query } = useNavigation();
 
-  const showLinks = !pathname.includes('/share/');
+  // const showLinks = !pathname.includes('/share/');
   const { view } = query;
 
   const params = Object.keys(query).reduce((obj, key) => {
@@ -26,7 +24,7 @@ export default function WebsiteDetailsPage({ websiteId }: { websiteId: string })
 
   return (
     <WebsiteProvider websiteId={websiteId}>
-      <WebsiteHeader websiteId={websiteId} showLinks={showLinks} />
+      {/* <WebsiteHeader websiteId={websiteId} showLinks={showLinks} /> */}
       <FilterTags websiteId={websiteId} params={params} />
       <WebsiteMetricsBar websiteId={websiteId} showFilter={true} showChange={true} sticky={true} />
       <WebsiteChart websiteId={websiteId} />

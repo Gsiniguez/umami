@@ -1,9 +1,8 @@
 'use client';
-import WebsiteDetailsPage from '../../(main)/websites/[websiteId]/WebsiteDetailsPage';
 import { useShareToken } from 'components/hooks';
 import Page from 'components/layout/Page';
+import WebsiteDetailsPage from '../../(main)/websites/[websiteId]/WebsiteDetailsPage';
 import Header from './Header';
-import Footer from './Footer';
 import styles from './SharePage.module.css';
 
 export default function SharePage({ shareId }) {
@@ -18,7 +17,7 @@ export default function SharePage({ shareId }) {
       <Page>
         <Header />
         <WebsiteDetailsPage websiteId={shareToken.websiteId} />
-        <Footer />
+        {/* <Footer /> */}
       </Page>
     </div>
   );
