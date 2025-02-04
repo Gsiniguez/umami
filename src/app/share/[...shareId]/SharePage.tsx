@@ -15,7 +15,7 @@ export default function SharePage({ shareId }) {
   return (
     <div className={styles.container}>
       <Page>
-        <Header />
+        {/* <Header /> */}
         <WebsiteDetailsPage websiteId={shareToken.websiteId} />
         {/* <Footer /> */}
       </Page>
